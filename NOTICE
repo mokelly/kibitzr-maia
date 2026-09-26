@@ -1,0 +1,23 @@
+kibitzr-maia
+Copyright (C) 2026 Michael O'Kelly
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option)
+any later version. See LICENSE for the full text.
+
+Upstream
+--------
+This repository contains work based on Maia-3 by the CSSLab Maia team
+(University of Toronto), https://github.com/CSSLab/maia3, licensed under the
+GNU Affero General Public License v3.0. Model weights referenced by the export
+script are published by UofTCSSLab on Hugging Face.
+
+Modifications
+-------------
+2026-07-18  export/export_onnx.py: ONNX export of the Maia-3 model. Re-expresses
+            multi-head attention, RMSNorm and the promotion-logit loop with
+            primitive ops for onnxruntime-web, with parity checks against the
+            original forward pass.
+2026-07-18  browser/tokenizer.ts: TypeScript port of the maia3.dataset
+            tokenization chain for in-browser inference.
